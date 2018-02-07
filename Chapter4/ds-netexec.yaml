@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: netexec
+  labels:
+    run: netexec
+spec:
+  template:
+    metadata:
+      name: netexec
+      labels:
+          run: netexec
+    spec:
+      hostNetwork: true
+      containers:
+      - name: netexec
+        image: "gcr.io/google_containers/netexec:1.7"
+        command: ["sh", "-c"]
+        args: ["/netexec --http-port 29999 --udp-port 29998"]
+        ports:
+        - containerPort: 29999
+          protocol: TCP
