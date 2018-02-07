@@ -5,7 +5,4 @@ metadata:
 spec:
     containers:
     - image: redis:3.2
-       imagePullPolicy: IfNotPresent
-       name: redis
-    restartPolicy: Always
-
+      name: redis
