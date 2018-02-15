@@ -13,4 +13,4 @@ kubectl get nodes
 /opt/kubeadmin1/Chapter2/calico.sh
 kubectl get pods --all-namespaces
 kubectl taint nodes --all node-role.kubernetes.io/master-
-
+echo "source <(kubectl completion bash)" >> ~/.bashrc
